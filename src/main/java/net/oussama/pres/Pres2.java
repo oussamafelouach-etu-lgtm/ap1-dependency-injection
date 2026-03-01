@@ -1,9 +1,11 @@
 package net.oussama.pres;
 
 import net.oussama.dao.IDao;
+import net.oussama.metier.IMetier;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.lang.reflect.Method;
 import java.util.Scanner;
 
 
@@ -14,13 +16,18 @@ public class Pres2 {
         String daoClassName = scanner.nextLine();
         Class cDao =Class.forName(daoClassName);
         cDao.newInstance();
-        IDao dao=(IDao) cDao.newInstance();
-        System.out.println(dao.getData());
+        IDao d=(IDao) cDao.newInstance();
+
 
         String metierClassName = scanner.nextLine();
-        Class cMetier =Class.forName(daoClassName);
-        cMetier.newInstance();
-        IDao metier=cDao.getConstructor(IDao.class).newInstance(d);
-        System.out.println(dao.getData());
+        Class cMetier =Class.forName(metierClassName);
+        IMetier metier= (IMetier) cMetier.getConstructor(IDao.class).newInstance(d);
+        //IMetier metier= (IMetier) cMetier.getConstructor().newInstance();
+        //Method setDao =cMetier.getDeclaredMethod("setDao", IDao.class);
+        //setDao.invoke(metier,d);
+
+
+        System.out.println("Res= "+metier.calcul());
+
     }
 }
