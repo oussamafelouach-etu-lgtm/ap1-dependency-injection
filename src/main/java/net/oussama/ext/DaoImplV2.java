@@ -1,4 +1,4 @@
-package net.oussama.net.oussama.ext;
+package net.oussama.ext;
 
 import net.oussama.dao.IDao;
 
