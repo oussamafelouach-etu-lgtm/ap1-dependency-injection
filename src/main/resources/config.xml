@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
- https://www.springframework.org/schema/beans/spring-beans.xsd">
-
-    <!-- Exemple de configuration beans -->
-    <bean id="metier" class="oussama.dao.MetierImpl">
-        <property name="dao" ref="d"/>
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean id="d" class="net.oussama.dao.DaoImpl"></bean>
+    <bean id="metier" class="net.oussama.metier.MetierImpl">
+        <property name="dao" ref="d"></property>
     </bean>
-
-    <!-- Plus de config... -->
-
 </beans>
