@@ -130,14 +130,6 @@ System.out.println("RES=" + metier.calcul());
 
 ---
 
-## Prérequis
-
-- Java 17+
-- Maven 3.x
-- Spring Framework 7.0.5 (déclaré dans `pom.xml`)
-
----
-
 ## Compilation et exécution
 
 ```bash
@@ -163,7 +155,5 @@ mvn exec:java -Dexec.mainClass="net.oussama.pres.PresSpringAnnotation"
 
 ---
 
-## Auteur
 
-**Oussama** — TP Architecture Logicielle, Injection de Dépendances avec Spring Framework
 
